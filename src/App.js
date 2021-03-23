@@ -2,13 +2,14 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  NavLink
 } from 'react-router-dom';
 import Home from './pages/Home.js';
 import Projects from './pages/Projects.js';
 import About from './pages/About.js';
 import Contact from './pages/Contact.js';
 import './App.css';
+
 
 
 export default function App() {
@@ -20,16 +21,16 @@ export default function App() {
             <nav>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                <NavLink exact activeClassName="active" to="/">Home</NavLink>
                 </li>
                 <li>
-                  <Link to="/about">About</Link>
+                  <NavLink exact activeClassName="active" to="/about">About</NavLink>
                 </li>
                 <li>
-                  <Link to="/projects">Projects</Link>
+                  <NavLink exact activeClassName="active" to="/projects">Projects</NavLink>
                 </li>
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <NavLink exact activeClassName="active" to="/contact">Contact</NavLink>
                 </li>
               </ul>
             </nav>
