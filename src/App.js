@@ -4,7 +4,10 @@ import {
   Route,
   Link
 } from 'react-router-dom';
- import logo from './logo.svg';
+import Home from './pages/Home.js';
+import Projects from './pages/Projects.js';
+import About from './pages/About.js';
+import Contact from './pages/Contact.js';
 import './App.css';
 
 
@@ -12,54 +15,53 @@ export default function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
+        <body>
+          <header>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <li>
+                  <Link to="/projects">Projects</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Contact</Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            {/* <About /> */}
-            <div className="App">
-              <header className="App-header">
-                  <img src={logo} className="App-logo" alt="logo" />
-                  <p>***ABOUT <code>src/App.js</code> and save to reload.</p>
-                  <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Learn React</a> 
-              </header>
+          {/* A <Switch> looks through its children <Route>s and
+              renders the first one that matches the current URL. */}
+          <main>
+            <Switch>
+              <Route path="/about">
+                <About />            
+              </Route>
+              <Route path="/projects">
+                <Projects />             
+              </Route>
+              <Route path="/contact">
+                <Contact />            
+              </Route>
+              <Route path="/">
+                <Home />            
+              </Route>
+            </Switch>
+          </main>
+        </body>
+
+        <footer>
+          <div class="bg-light py-4">
+            <div class="container text-center">
+              <p class="text-muted mb-0 py-2">© 2021</p>
             </div>
-          </Route>
-          <Route path="/users">
-            {/* <Users /> */}
-            <div className="App">
-              <header className="App-header">
-                  <img src={logo} className="App-logo" alt="logo" />
-                  <p>***USERS <code>src/App.js</code> and save to reload.</p>
-                  <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Learn React</a> 
-              </header>
-            </div>
-          </Route>
-          <Route path="/">
-            {/* <Home /> */}
-            <div className="App">
-              <header className="App-header">
-                  <img src={logo} className="App-logo" alt="logo" />
-                  <p>***HOME <code>src/App.js</code> and save to reload.</p>
-                  <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">Learn React</a> 
-              </header>
-            </div>
-          </Route>
-        </Switch>
+          </div>
+        </footer>
       </div>
     </Router>
   );
