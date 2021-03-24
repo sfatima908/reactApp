@@ -71,7 +71,6 @@ h1 {
 }
 
 /* FOOTER */
-
 footer {
   position: fixed;
   left: 0;
@@ -82,9 +81,12 @@ footer {
 }
 
 /* Desktop  */
-
 @media (min-width: 600px) {
   nav li {
     margin: 40px;
   }
 
+  main p {
+    margin: 0 500px 0 500px;
+  }
+}
